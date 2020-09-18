@@ -63,6 +63,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Services\Podcast\IPodcastService.cs" />
     <Compile Include="Services\Podcast\PodcastService.cs" />
+    <Compile Include="Tools\VersionTools.cs" />
     <EmbeddedResource Include="formMain.resx">
       <DependentUpon>formMain.cs</DependentUpon>
     </EmbeddedResource>

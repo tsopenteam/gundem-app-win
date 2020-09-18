@@ -39,6 +39,8 @@
             this.lblPodcastCount = new System.Windows.Forms.Label();
             this.linkGithub = new System.Windows.Forms.LinkLabel();
             this.linkWeb = new System.Windows.Forms.LinkLabel();
+            this.btnRandomPodcast = new System.Windows.Forms.Button();
+            this.lblVersion = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.mediaPlayerPodcast)).BeginInit();
             this.SuspendLayout();
             // 
@@ -143,11 +145,33 @@
             this.linkWeb.Text = "Web";
             this.linkWeb.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkWeb_LinkClicked);
             // 
+            // btnRandomPodcast
+            // 
+            this.btnRandomPodcast.Location = new System.Drawing.Point(329, 412);
+            this.btnRandomPodcast.Name = "btnRandomPodcast";
+            this.btnRandomPodcast.Size = new System.Drawing.Size(120, 23);
+            this.btnRandomPodcast.TabIndex = 10;
+            this.btnRandomPodcast.Text = "Rastgele Podcast";
+            this.btnRandomPodcast.UseVisualStyleBackColor = true;
+            this.btnRandomPodcast.Click += new System.EventHandler(this.btnRandomPodcast_Click);
+            // 
+            // lblVersion
+            // 
+            this.lblVersion.AutoSize = true;
+            this.lblVersion.ForeColor = System.Drawing.Color.Silver;
+            this.lblVersion.Location = new System.Drawing.Point(312, 490);
+            this.lblVersion.Name = "lblVersion";
+            this.lblVersion.Size = new System.Drawing.Size(37, 13);
+            this.lblVersion.TabIndex = 11;
+            this.lblVersion.Text = "v0.0.0";
+            // 
             // formMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(660, 510);
+            this.Controls.Add(this.lblVersion);
+            this.Controls.Add(this.btnRandomPodcast);
             this.Controls.Add(this.linkWeb);
             this.Controls.Add(this.linkGithub);
             this.Controls.Add(this.lblPodcastCount);
@@ -182,5 +206,7 @@
         private System.Windows.Forms.Label lblPodcastCount;
         private System.Windows.Forms.LinkLabel linkGithub;
         private System.Windows.Forms.LinkLabel linkWeb;
+        private System.Windows.Forms.Button btnRandomPodcast;
+        private System.Windows.Forms.Label lblVersion;
     }
 }

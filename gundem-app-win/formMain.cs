@@ -1,5 +1,6 @@
 ﻿using gundem_app_win.Models;
 using gundem_app_win.Services.Podcast;
+using gundem_app_win.Tools;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -26,6 +27,8 @@ namespace gundem_app_win
 
             _podcastService = new PodcastService();
             _podcasts = new List<PodcastModel>();
+
+            lblVersion.Text = VersionTools.GetVersion();
         }
 
         public void WriteLog(string message)
@@ -37,6 +40,7 @@ namespace gundem_app_win
         {
             listBoxPodcast.Enabled = state;
             btnUpdateList.Enabled = state;
+            btnRandomPodcast.Enabled = state;
         }
 
         public void UpdatePodcastList()
@@ -89,6 +93,23 @@ namespace gundem_app_win
         private void linkWeb_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             Process.Start("https://tsopenteam.github.io");
+        }
+
+        private void btnRandomPodcast_Click(object sender, EventArgs e)
+        {
+            if (_podcasts.Count < 1)
+            {
+                WriteLog("podcast listesi boş !");
+                return;
+            }
+
+            Random random = new Random();
+            int randomIndex = random.Next(0, _podcasts.Count);
+
+            PodcastModel podcastModel = _podcasts[randomIndex];
+
+            mediaPlayerPodcast.URL = podcastModel.PodcastLink;
+            lblCurrentPodcast.Text = podcastModel.TitlePodcast;
         }
     }
 }
